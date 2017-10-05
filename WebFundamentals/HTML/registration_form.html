@@ -1,40 +1,90 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<link rel="stylesheet" type="text/css" href="my_css_file.css">
-    <form>
-        <p>My Registration Form</p>
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name">
+    <body>
+        <form>
+            <p>My Registration Form</p>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name">
 
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="lastst_name">
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="lastst_name"><br>
 
-        <label for="email">Email:</label>
-        <input type="text" id="email">
+            <label for="email">Email:</label>
+            <input type="text" id="email">
 
-        <label>
-            Password<input type="password" name="password">
-        </label>
+            <label>
+                Password<input type="password" name="password">
+            </label>
 
-        <label>
-            PW Comfirm<input type="password" name="pw_password">
-        </label>
-        <label>
-            Birthday<input type="date" name="birthday">
-        </label
-        <label>
-            Male<input type="Radio" name="gender" value="male">
-        </label>
-        <label>
-            Female<input type="Radio" name="gender" value="female">
-        </label>
-        <p>A short description about yourself:</p>
-        <textarea name="description"></textarea>
-        <p>Favorite Language</p>
-        <select name="favorite_language">
-            <option value="Javascript">Javascript</option>
-            <option value="CSS">CSS</option>
-        </select>
-        <input type="submit" value="submit">
-    </form>
+            <label>
+                PW Comfirm<input type="password" name="pw_password">
+            </label> <br>
+            <label>
+                Birthday<input type="date" name="birthday">
+            </label
+            <label>
+                Male<input type="Radio" name="gender" value="male">
+            </label>
+            <label>
+                Female<input type="Radio" name="gender" value="female">
+            </label><br>
+
+            <p>Nationality:<br></p>
+            <label>
+                American<input type="checkbox" name="nationality" value="American">
+            </label>
+
+            <label>
+                Chinese<input type="checkbox" name="nationality" value="Chinese">
+            </label>
+
+            <label>
+                Korean<input type="checkbox" name="nationality" value="Korean">
+            </label>
+
+            <p>A short description about yourself:</p>
+            <textarea name="description" rows="10" cols="50"></textarea>
+            <p>Favorite Language</p>
+            <select name="favorite_language">
+                <option value="Javascript">Javascript</option>
+                <option value="CSS">CSS</option>
+            </select>
+
+            <input type="submit" value="submit">
+        </form>
+        <p>Popular Links:<br></p>
+        <ol>
+            <li><a href="http://www.google.com"> Google </a></li>
+            <li><a href="http://www.codingdojo.com"> CodingDojo </a></li>
+            <li><a href="http://www.youtube.com"> Youtube </a></li>
+        </ol>
+        <table>
+            <p>Stuff Information:</p>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ekko</td>
+                    <td>Male</td>
+                    <td>Ekko@lol.net</td>
+                </tr>
+                <tr>
+                    <td>Lee Xin</td>
+                    <td>Male</td>
+                    <td>Lxin@lol.net</td>
+                </tr>
+                <tr>
+                    <td>Ahri</td>
+                    <td>Female</td>
+                    <td>Arhi@lol.net</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </body>
 </html>
