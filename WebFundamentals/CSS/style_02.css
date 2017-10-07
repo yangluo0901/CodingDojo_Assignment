@@ -1,0 +1,48 @@
+*{
+    maring:0;
+    padding:0:
+}
+#container{
+    background-color: darkslateblue;
+    padding:5px;
+
+}
+#header{
+    background-color: tomato;
+    border-radius: 15px;
+    padding:10px;
+    margin:10px 5px;
+}
+#nav{
+    background-color: DarkTurquoise;
+    border-radius: 15px;
+    display: inline-block;
+    vertical-align: top;
+    margin:0 auto;
+    padding:15px;
+}
+#content{
+    width:900px;
+    height:600px;
+    border-radius: 15px;
+    background-color: black;
+    color:white;
+    display:inline-block;
+    margin:0 auto;
+    padding:15px;
+
+}
+#content a{
+    color: lightblue;
+}
+#footer{
+    background-color: grey;
+    padding:15px;
+    border-radius: 15px;
+}
+#content p{
+    display:inline;
+}
+#content li{
+    margin:20px;
+}

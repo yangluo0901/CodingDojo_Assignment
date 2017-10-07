@@ -1,0 +1,18 @@
+*{
+    padding:0;
+    margin:0;
+}
+#container{
+  width:200px;
+  height:200px;
+  background: blue;
+  padding-top:500px;
+  /*position:relative;*/
+}
+#center-me{
+  background: red;
+  height: 100px;
+  width: 100px;
+  margin: 0px auto;
+  outline-style: dashed;
+}
