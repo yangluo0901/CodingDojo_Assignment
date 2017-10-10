@@ -1,0 +1,116 @@
+
+*{
+    margin:0px;
+    padding:0px;
+    }#wrapper{
+    width:900px;
+    height:900px;
+
+    background-color: purple;
+}
+.header-1{
+    padding:20px 20px;
+    background-color: lightgrey;
+}
+.header-1 h1 {
+    display: inline;
+}
+.header-1 h3{
+    display: inline;
+    float:right;
+}
+.header-2{
+
+    padding:20px;
+
+
+}
+.subcontent-1{
+    display: inline-block;
+}
+.subcontent-1 img{
+    border: 2px solid lightgrey;
+    width: 400px;
+    height: 230px;
+
+}
+.about {
+    background-color: lightgrey;
+    display: inline-block;
+    width:400px;
+    height: 230px;
+    float: right;
+
+}
+.about h2{
+    background-color: grey;
+}
+.main-content{
+
+
+    text-align: center;
+
+}
+.column{
+    padding:10px;
+    margin: 10px;
+    display:inline-block;
+    width:250px;
+    background-color: white;
+}
+
+.column h2{
+    text-align: left;
+    background-color: grey;
+}
+.column h3{
+    text-align: middle;
+    text-align: left;
+    background-color: grey;
+}
+.column p{
+    clear:both;
+    text-align: left;
+}
+.column img{
+    display:block;
+    width:250px;
+}
+
+.icon img{
+    width:25px;
+    height:25px;
+    margin:10px;
+    float: left;
+    display: inline-block;
+}
+.button{
+    display:block;
+    clear:both;
+    padding:30px;
+}
+.button a{
+
+    text-decoration: none;
+    background-color: green;
+    border-radius: 5px;
+}
+/*ul{
+    list-style-image:url('Portfolio_images/github.png');
+}*/
+.footer{
+    background-color: lightgrey;
+    text-align: center;
+    padding:10px;
+    margin: 0;
+}
+li{
+    display:inline;
+}
+li img{
+    width:10px;
+    height:10px;
+}
+li p{
+    line-height: 2;
+}

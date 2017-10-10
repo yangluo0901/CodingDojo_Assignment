@@ -1,6 +1,6 @@
 *{
  margin: 0px;
- padding: 30px;
+ padding: 0px;
 }
 #wrapper{
     background-color: #d3d1ad;
@@ -10,13 +10,19 @@
 
 }
 #header{
-    /*background-color: silver;*/
-    padding: 10px 10px;
+    background-color: green;
+    position:relative;
+    text-align: center;
+}
 
+.subcontent-h {
+    background-color: white;
+    display:inline-block;
+    /*position: relative;
+    left:50%;*/
 
 }
-.subcontent-h{
-    display:inline-block;
+
 }
 #main-content{
     /*background-color: green;*/
