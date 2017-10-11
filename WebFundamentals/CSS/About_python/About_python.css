@@ -147,17 +147,18 @@ button{
 
 }
 .subcontent ul{
+    list-style-position: inside;
     list-style-type: square;
     color:#88b4db;
-    padding-left: 0px;
 
 }
 .subcontent li{
     line-height: 200%;
-    padding-left: 0px;
+
     /*list-style-position: inside;*/
 }
 .column-1,.column-2{
+    
     margin-top:10px;
     margin-bottom:10px;
     border-top: 4px solid #73a7d5;
