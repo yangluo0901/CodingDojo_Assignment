@@ -142,18 +142,22 @@ ul,ol{
     color:#3399ff;
 }
 .middle ul,ol{
+    margin-left: 15px;
     margin-top: 13px;
     margin-bottom: 13px;
+    padding-right: 5px;
 }
 .middle li{
     margin-bottom: 5px;
+
 }
 .middle span{
-    color:lightblue;
+    color:#2ba7ba;
 }
 .c-s{
     width:250px;
-    margin-left: 200px;
+    margin:0 auto;
+    display:block;
 }
 .lower{
     border: 4px solid #3399ff;
