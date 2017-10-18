@@ -1,0 +1,11 @@
+*{
+    margin:0;
+    padding:0;
+}
+button{
+    display: block;
+}
+.color{
+    background-color: green;
+    color:red;
+}

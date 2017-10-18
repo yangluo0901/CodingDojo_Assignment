@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hover In/Out</title>
+        <link rel="stylesheet" type="text/css" href="Hover_in_out.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("img").hover(function(){
+                    var temp = $(this).attr("src");
+                    $(this).attr("src",$(this).attr("alt-src"));
+                        $(this).attr("alt-src",temp);
+
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <img src="heisencat.png" alt-src="ninja.png">
+            <img src="ironcat.png" alt-src="ninja.png">
+            <img src="linkcat.png" alt-src="ninja.png">
+            <img src="mario.png" alt-src="ninja.png">
+        </div>
+
+
+    </body>
+</html>

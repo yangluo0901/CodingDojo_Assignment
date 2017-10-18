@@ -1,0 +1,142 @@
+*{
+    margin:0;
+    padding:0;
+}
+#wrapper{
+    width: 970px;
+    background-color: #181818;
+}
+h3{
+    color: #ff8800;
+    font-size: 90%
+}
+h2{
+    font-size: 130%;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+p{
+    color:white;
+    font-size: 70%;
+}
+.header{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100px;
+}
+.header img{
+    display: inline;
+    margin-right:550px;
+}
+.header p{
+    padding-top: 15px;
+    color:#f0f0f0;
+    font-size: 90%;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: top;
+}
+.nav{
+    padding-left:10px;
+    padding-right: 10px;
+
+}
+.nav a{
+    text-decoration: none;
+    color: white;
+}
+.nav ul{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    background: linear-gradient(to bottom,#505050,#383838);
+    color:white;
+
+
+}
+.nav li{
+    vertical-align: middle;
+    display: inline;
+    margin-right: 40px;
+    padding-right: 5px;
+    border-right: 3px groove #808080;
+}
+.nav img{
+    width: 950px;
+    border-bottom: 5px solid gray;
+}
+
+.option{
+    padding-left: 35px;
+    background-color: #191919;
+    height: 120px;
+}
+.block{
+    width: 230px;
+    display: inline-block;
+    margin-top: 20px;
+}
+.block img{
+    width: 30px;
+    display: inline-block;
+    vertical-align: top;
+}
+.block div{
+    width: 130px;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+}
+.middle{
+    background-color: #101010;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 35px;
+}
+.middle div{
+    width:550px;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+button{
+    margin-left: 250px;
+    width:90px;
+    height: 30px;
+    display: inline-block;
+    background-color: #ffcc33;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.Portfolio{
+    padding-left: 20px;
+}
+
+.subheader{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.subheader h2{
+    display: inline-block;
+}
+.subheader p{
+    color: #ff8800;
+    margin-left: 750px;
+    display: inline-block;
+}
+.column{
+    padding-bottom: 50px;
+    width:200px;
+    display: inline-block;
+    margin-right: 33.333px;
+
+}
+.column img{
+    border: 3px solid #484848;
+    width: 179px;
+}
+.footer{
+    margin-left:837px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function print_1(arr){
+                var string;
+                for (var i = 0; i < arr.length; i++) {
+                    string = arr[i].first_name + " "+arr[i].last_name;
+                    console.log(string);
+                }
+            }
+
+            function print_2(object){
+                var arr = [];
+               for(var key in object){
+                   console.log (key);
+                    for (var i = 0; i < object[key].length; i++){
+                           var string ="";
+                        for (var x in object[key][i]) {
+
+                            string+= object[key][i][x]+" ";
+
+                       }
+                       arr[i] = i + 1+" - "+ string;
+                        console.log(arr[i]);
+
+                    }
+               }
+                }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

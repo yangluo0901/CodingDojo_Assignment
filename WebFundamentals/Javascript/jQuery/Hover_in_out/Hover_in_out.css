@@ -1,0 +1,15 @@
+*{
+    margin:0;
+    padding:0;
+}
+.wrapper{
+
+    width:970px;
+    margin:0 auto;
+}
+img{
+    border: 3px solid lightgray;
+    width:200px;
+    display: inline;
+
+}

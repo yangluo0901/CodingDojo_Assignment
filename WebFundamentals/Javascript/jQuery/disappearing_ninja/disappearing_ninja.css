@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding:0;
+}
+#wrapper{
+    width:970px;
+    margin: 0 auto;
+}
+h2{
+    text-shadow: 3px 3px 2px lightgray;
+    margin-bottom: 20px;
+}
+img{
+    border: 2px solid lightgray;
+    width:220px;
+    display: inline-block;
+}
+button{
+    margin-top: 20px;
+    background-color: lightgreen;
+    width:80px;
+    height:20px;
+    text-align: center;
+    box-shadow: 2px 2px lightgray;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Disappearing Ninja</title>
+        <link rel="stylesheet" type="text/css" href="disappearing_ninja.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("img").click(function(){
+                    $(this).hide("slow");
+                });
+                $("button").click(function(){
+                    $("img").show("slow");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2> jQuery Assignment 1 </h2>
+            <div>
+                <img src="daftpunk.gif" alt="a gif"></img>
+                <img src="daftpunk.gif" alt="a gif"></img>
+                <img src="daftpunk.gif" alt="a gif"></img>
+                <img src="daftpunk.gif" alt="a gif"></img>
+                <img src="daftpunk.gif" alt="a gif"></img>
+                <img src="daftpunk.gif" alt="a gif"></img>
+                <img src="daftpunk.gif" alt="a gif"></img>
+                <img src="daftpunk.gif" alt="a gif"></img>
+            </div>
+            <button type="button">Restore</button>
+        </div>
+    </body>
+</html>

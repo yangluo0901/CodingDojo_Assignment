@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Basic Functions</title>
+        <link rel="stylesheet" type="text/css" href="jQuery_function.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#hide").click(function(){
+                    $("p").hide("slow",function(){
+                        alert(" Hide function tested !");
+                    });
+                });
+
+                $("#show").click(function(){
+                    $("p").show("100");
+                });
+
+                $("#toggle").click(function(){
+                    $("p").toggle("slow", function(){
+                        alert(" Toggle function tested !");
+                    });
+                });
+
+                $("#slideUp").click(function(){
+                    if ($("p").is(":hidden")) {
+                        $("p").slideDown("slow",function(){
+                            alert(" slidedown function tested !");
+                        });
+                    } else{
+                        $("p").slideUp("slow",function(){
+                            alert(" slideUp function tested !");
+                        });
+                    }
+                    });
+
+                $("#Fade").click(function(){
+                    if($("p").is(":hidden")){
+                        $("p").fadeIn("slow");
+                    }else{
+                        $("p").fadeOut("slow");
+                    }
+                });
+                $("#addclass").click(function(){
+                    $("p").addClass("color");
+                    alert("addClass function tested!");
+                });
+
+                $("#Edit").click(function(){
+                    $("p").before("<b>Use before to add string to first index outside elements!</b>");
+                    $("p").after ("Use after to add string last index outside elements!");
+                    $("p").append("<b>Use append to add string last index inside elements!</b>");
+                    $("p").prepend("Use prepend to add string first index inside elements!");
+                });
+                $("#html").click(function(){
+                    $("p").html("<b> Can also add tag by html </b> Overwrite text by html");
+                });
+                $("#attr").click(function(){
+                    var property = $("button").attr("type");
+                    $("p").text(property);
+                });
+                $("#data").click(function(){
+                    $("p").data("element1",{type: "elements", value:10});
+                    console.log($("p").data());
+                });
+
+                });
+        </script>
+    </head>
+    <body>
+        <button type="button" id="hide">hide</button>
+        <button type="button" id="show">show</button>
+        <button type="button" id="toggle">toggle</button>
+        <button type="button" id="slidedown">slideDown</button>
+        <button type="button" id="slideUp">slideUp</button>
+        <button type="button" id="Fade">Fade</button>
+        <button type="button" id="addclass">addClass</button>
+        <button type="button" id="Edit">Edit</button>
+        <button type="button" id="html">.html</button>
+        <button type="button" id="attr">attr</button>
+        <button type="button" id="data">data</button>
+        <p>Paragraph used to text jQuery functions!</p>
+    </body>
+</html>

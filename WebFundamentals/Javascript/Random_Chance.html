@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+        "use strict";
+        function lottery(quarter,round_1){
+            if (quarter > 0) {
+                var rewards = [];
+                var round_2 = 1;// round counter
+                var round;// how many round you played, different with round_1 which is how many round you want to play.
+                var string;
+                var sum = 0;// sum of rewards
+                var win = 0;// times of win
+                if (quarter >= round_1) {// when you have enought money to play
+                    round = round_1;
+                    string = " After "+round + " your rewards :";
+                } else {// when you dont have enough money, ex: you have 5 bucks, but you want to play 6 times, you can only play 5 times and a error comes up.
+                    round =  quarter;
+                    string = " Insufficient Gold, you can only play "+ round +" rounds and your rewards :";
+                }
+                while (round_2 <= round) {
+                    var nums = Math.trunc(Math.random()*100);
+                    if (nums == 1) {
+                        win+=1;
+                        rewards[round_2-1] = Math.random()*51+50;
+                        console.log("Win! You get "+rewards[round_2-1]);
+                    }
+                    else{
+                        rewards[round_2-1] = 0;
+                        console.log("Sorry, you are not lucky this time!");
+                    }
+                    sum+=rewards[round_2-1];
+                    round_2+=1;
+                }
+                sum = sum + quarter - round;
+                string = "Won "+ win + " times "+ string +sum;
+                console.log(string);
+                console.log(rewards);
+            }
+        }
+        </script>
+    </head>
+    <!-- <body>
+
+    </body> -->
+</html>
