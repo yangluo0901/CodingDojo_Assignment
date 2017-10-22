@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Contact Card</title>
+        <link rel="stylesheet" type="text/css"  href="Contact_card.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(document).on("click","button",function(){
+                    var description=$("input[type='textarea']").val();
+                    $(".right").append(" <div class = 'name_card'><h1>"+$("input[name='first_name']").val()
+                    +"  "+$("input[name='last_name']").val()+"</h1><h4>"+"Description"+"</h4><p class='hidable'>"
+                +description+"</p></div>");
+                $("input[name='first_name']").val("");
+				$("input[name='last_name']").val("");
+				$("input[type='textarea']").val("");
+                return false;
+
+                });
+                // $(document).on("click",".name_card",function(){
+                //     if($(this).children("p").css("visibility")=="hidden"){
+                //         $(this).children("p").css("visibility","visible");
+                //         $(this).children("h4").hide();
+                //     }else{
+                //         $(this).children("p").css("visibility","hidden");
+                //         $(this).children("h4").show();
+                //     }
+                // });
+
+                $(document).on("click",".name_card",function(){
+                    if($(this).children("p").css("display")=="none"){
+                        $(this).children("p").css("display","unset");
+                        $(this).children("h4").hide();
+                    }else{
+                        $(this).children("p").css("display","none");
+                        $(this).children("h4").show();
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="left">
+                <form class="" action="index.html" method="post">
+                    <label>
+                        First Name: <input type="text" name="first_name" placeholder=""="First Name">
+                    </label>
+                    <label>
+                        Last Name: <input type="text" name="last_name" placeholder=""="Last Name">
+                    </label>
+                    <label class="description">
+                        Description <input class="description" type="textarea" placeholder="description">
+                    </label>
+                </form>
+                <button> Add User </button>
+            </div>
+            <div class="right">
+
+            </div>
+        </div>
+    </body>
+</html>

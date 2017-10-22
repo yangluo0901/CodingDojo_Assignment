@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Siblings Test</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(document).on("click",".first .secondary",function(){
+                $(this).css("color","red");
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div class="first">
+            <div class="secondary">
+                <p>dafdafdafadf</p>
+                <p>dadfadfadfa</p>
+                <h1>dadfadfdafaf</h1>
+            </div>
+        </div>
+    </body>
+</html>
