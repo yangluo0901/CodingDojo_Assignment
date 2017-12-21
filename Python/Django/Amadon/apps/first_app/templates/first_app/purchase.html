@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Amadon</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'first_app/css/style.css'%}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <h2>Amadon Store</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dojo T-shirt</td>
+                        <td>$ 19.99</td>
+                        <td>
+                            <form class="" action="/amadon/purchase" method="post">
+                                {% csrf_token %}
+                                <select class="" name="quantity">
+                                    <option value="1"> 1 </option>
+                                    <option value="2"> 2 </option>
+                                    <option value="3"> 3 </option>
+                                </select>
+                                <input type="hidden" name="product_id" value="001">
+                                <input type="submit" name="submit" value="Buy!">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dojo Sweater</td>
+                        <td>$29.99</td>
+                        <td>
+                            <form class="" action="/amadon/purchase" method="post">
+                                {% csrf_token %}
+                                <select class="" name="quantity">
+                                    <option value="1"> 1 </option>
+                                    <option value="2"> 2 </option>
+                                    <option value="3"> 3 </option>
+                                </select>
+                                <input type="hidden" name="product_id" value="002">
+                                <input type="submit" name="submit" value="Buy!">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dojo Cup</td>
+                        <td>$4.99</td>
+                        <td>
+                            <form class="" action="/amadon/purchase" method="post">
+                                {% csrf_token %}
+                                <select class="" name="quantity">
+                                    <option value="1"> 1 </option>
+                                    <option value="2"> 2 </option>
+                                    <option value="3"> 3 </option>
+                                </select>
+                                <input type="hidden" name="product_id" value="003">
+                                <input type="submit" name="submit" value="Buy!">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Algorithm Book</td>
+                        <td>$49.99</td>
+                        <td>
+                            <form class="" action="/amadon/purchase" method="post">
+                                {% csrf_token %}
+                                <select class="" name="quantity">
+                                    <option value="1"> 1 </option>
+                                    <option value="2"> 2 </option>
+                                    <option value="3"> 3 </option>
+                                </select>
+                                <input type="hidden" name="product_id" value="004">
+                                <input type="submit" name="submit" value="Buy!">
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users Index</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'crud/css/style.css' %}">
+  </head>
+  <body>
+    <h2>Users</h2>
+    <table>
+      <thead>
+        <tr>
+          <th class = "id ">ID</th>
+          <th>Full Name</th>
+          <th>E-mail</th>
+          <th>Created_at</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for element in users %}
+          <tr>
+            <td >{{element.id}}</td>
+            <td>{{element.first_name}} {{element.last_name}}</td>
+            <td>{{element.email}}</td>
+            <td>{{element.created_at}}</td>
+            <td>
+              <a href="/users/{{element.id}}">Show</a>  <!--direct to show page-->
+              <a href="/users/{{element.id}}/edit">Edit</a>
+              <a href="/users/{{element.id}}/destroy">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+    <a href="/users/new">Add a new user</a>
+  </body>
+</html>

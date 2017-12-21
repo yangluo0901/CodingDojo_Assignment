@@ -1,0 +1,28 @@
+*{
+
+}
+.add{
+    margin-top: 20px;
+    display: block;
+
+}
+table, th,td{
+    border: 1px solid black;
+}
+th{
+    width: 200px;
+}
+td{
+    text-align: center;
+}
+/*.block{
+    display:block;
+}*/
+label{
+    /*display: inline-block;*/
+    text-align: right;
+    width:100px;
+}
+input[name="add_friend"]{
+    box-shadow:2px 2px black;
+}

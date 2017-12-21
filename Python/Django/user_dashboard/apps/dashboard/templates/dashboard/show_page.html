@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User information</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/style.css' %}">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="upper">
+          <a href="#"><b>Test APP</b></a>
+          <a href="/dashboard" class="current_at">Dashboard</a>
+          <a href="/signin">Log off {{request.session.login_user}}</a>
+      </div>
+      <div class="">
+        <h3>{{user.first_name}} {{user.last_name}}</h3>
+        <p>Registered at         {{user.created_at}}</p>
+        <p>User ID               #{{user.id}}</p>
+        <p>E-mail                {{user.email}}</p>
+        <p>Description           {{user.desc}}</p>
+      </div>
+
+      <h3>Leave a message for {{user.first_name}}</h3>
+      <form class="" action="/user/post" method="post">
+        {% csrf_token %}
+        <textarea name="post" rows="4" cols="80"></textarea>
+        <input type="hidden" name="recipient_id" value="{{request.session.recipient_id}}">
+        <input type="submit" name="submit" value="Post">
+      </form>
+
+      <div class="messages">
+          {% for post in posts %}
+          <ul>
+            <a href="/user/show/{{post.user.id}}">{{post.user.first_name}} {{post.user.last_name}}</a> wrote:
+            <li>{{post.content}}</li>
+              <ul>
+                {% for message in post.messages.all%}
+                  <li>{{message.content}}</li>
+                {% endfor %}
+
+                  <form class="" action="/user/message" method="post">
+                    {% csrf_token %}
+                    <textarea name="message" rows="2" cols="80"></textarea>
+                    <input type="hidden" name="post_id" value="{{post.id}}">
+                    <!-- <p>{{post.id}}</p> -->
+                    <input type="submit" name="submit" value="Post">
+                  </form>
+
+              </ul>
+            </li>
+          </ul>
+          {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

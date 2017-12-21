@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pokemon Image API</title>
+        <link rel="stylesheet" type="text/css" ref="pokemon.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.js"
+          integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+          crossorigin="anonymous">
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("button[name='button1']").click(function(){
+                    var current = $(".wrapper img").length;
+                    $.get("https://pokeapi.co/api/v2/pokemon/"+current+1,function(pokemon){
+                        $(".wrapper").append("<img class= 'pokemon' src= '"+pokemon.sprites.front_default+"'>");
+                        console.log(pokemon);
+                    },"json");
+                });
+                $("button[name='button2']").click(function(){
+                    var number = $("input").val();
+                    var current = $(".wrapper img").length;
+                    if (number>current) {
+                        for(var i = current+1; i <= number;i++){
+                            $.get("https://pokeapi.co/api/v2/pokemon/"+i,function(pokemon){
+                                $(".wrapper").append("<img class='pokemon' src='"+pokemon.sprites.front_default+"'>");
+                            },"json");
+                        }
+                    }else if (number==current){
+                        alert("Already loaded");
+                    }else{
+                        for(var j = current; j>number;j--){
+
+                                $("img:last").remove();
+                        };
+                    }
+                    console.log(current);
+
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <button type="button" name="button1">Add Pokemon one by one</button>
+        <input type="text" name="range" placeholder="Number">
+        <button type="button" name="button2">add pokemon at once</button>
+        <div class=wrapper>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+*{
+  margin:0;
+  padding:0;
+}
+.wrapper{
+  padding:10px 20px;
+  width:970px;
+  margin:0 auto;
+}
+.pic{
+  margin:0 auto;
+}
+img:nth-child(1){
+  margin-left: 75px;
+}
+img{
+  width:180px;
+  height:120px;
+  margin-right: 20px;
+}
+.info{
+    padding: 20px 15px;
+  margin:0 auto;
+  width:500px;
+  height:150px;
+  border: 2px solid black;
+  margin-top: 200px;
+}
+p{
+    font-style: sans-serif;
+    font-size: 120%;
+    margin-bottom: 20px;
+}

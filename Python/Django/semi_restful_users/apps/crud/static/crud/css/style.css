@@ -1,0 +1,40 @@
+table, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th{
+  width: 20% ;
+}
+th.id{
+  width: 10%;
+}
+tbody tr:nth-child(2n-1){
+  background-color: lightgrey;
+}
+a:hover {
+  color:blue;
+}
+a:visited {
+  color : #ffbf00;
+}
+label{
+  display: block;
+}
+input{
+  display: block;
+  border: 2px solid black;
+  box-shadow: 1px black;
+}
+input[type = "submit"]{
+  box-sizing:border-box;
+  margin-top: 20px;
+  margin-bottom:20px;
+  background-color:#33a2ff;
+  width:70px;
+  height:20px;
+  box-shadow: 2px 2px black;
+}
+a{
+  margin-top:20px;
+}

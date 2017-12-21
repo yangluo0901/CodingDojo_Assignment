@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Full Friends App</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+
+    </head>
+    <body>
+        <h1>Full Friends</h1>
+        <table>
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>E-Mail</th>
+                <th>Action</th>
+                <th>id</th>
+            </thead>
+            <tbody>
+                {% for element in friends_list %}
+                    <tr>
+                        <td>{{element['first_name']}}</td>
+                        <td>{{element['last_name']}}</td>
+                        <td class='email'>{{element['email']}}</td>
+                        <td>
+                            <form class="edit" action="/friends/{{element['id']}}/edit" method="GET">
+                                <input type="submit" name="Edit" value="Edit">
+                            </form>
+                            <form class="delete" action="/friends/{{element['id']}}/delete" method="post">
+                                <input type="submit" name="delete" value="Delete">
+                            </form>
+
+                        </td>
+                        <td>{{element['id']}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+    <form class="add" action='/add_friend' method="post">
+        <div class="block">
+            <label> First Name:</label>
+            <input type="text" name="first_name">
+        </div>
+        <div class="block">
+            <label>Last Name :</label>
+            <input type="text" name="last_name">
+        </div>
+        <div class="block">
+            <label> E-mail : </label>
+            <input type="email" name="email">
+        </div>
+
+        <input type="submit" name="add_friend" value="Add Friend">
+    </form>
+</html>

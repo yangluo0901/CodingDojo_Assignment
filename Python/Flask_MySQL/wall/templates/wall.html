@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Wall</title>
+    </head>
+    <body>
+        <form class="" action="/post_messages" method="post">
+            <textarea name="message" rows="8" cols="80"></textarea>
+            <input type="submit" name="post_message" value="post_message">
+        </form>
+        {% for element in all_messages %}
+            <h4>{{element['name']}} {{element['created_at']}}</h4>
+            <p>{{element['message']}}</p>
+            {% for count in all_message_comment %}
+                {% if count['id'] == element['message_id'] %}
+                    <h5>{{count['name']}} {{count['time']}}</h5>
+                    <p>{{count['comment']}}</p>
+                {% endif %}
+            {% endfor %}
+            <form class="" action="/post_comment/{{element['message_id']}}" method="post">
+                <textarea name="comment" rows="2" cols="80"></textarea>
+                <input type="submit" name="post_comment" value="post comment">
+            </form>
+        {% endfor %}
+
+    </body>
+</html>

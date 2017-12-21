@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Success!</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'first_app/css/style.css' %}">
+  </head>
+  <body>
+    <h1>Success! Welcome, {{name}} !</h1>
+    <p>Successfully login (or registered) !</p>
+    {% for element in users %}
+      <p>{{element.id}}   {{element.first_name}} {{element.last_name}}</p>
+    {% endfor %}
+  </body>
+</html>

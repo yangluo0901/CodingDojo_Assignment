@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sumbitted</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{static 'first_app.style.css %'}">
+    </head>
+    <body>
+        <p>Thanks for submitting this form ! you  have submitted this form {{request.session.times}} now !</p>
+        <h3>Sumbitted Information:</h3>
+        <p>Name:               {{name}}</p>
+        <p>Dojo Location:       {{location}}</p>
+        <p>Favorite Language:   {{language}}</p>
+        <p>Comment:            {{comment}}</p>
+        <a href="/"><button>Go Back</button></a>
+    </body>
+</html>

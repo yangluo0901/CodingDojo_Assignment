@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Register</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/style.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="upper">
+                <a href="#"><b>Test APP</b></a>
+                <a href="#">Home</a>
+                <a href="/signin">Sign In</a>
+            </div>
+            <div class="main_form">
+                <h2>Register</h2>
+                <form class="" action="/register/process" method="post">
+                    {% csrf_token %}
+                    <label>
+                      First Name: <input type="text" name="first_name">
+                    </label>
+                    <label>
+                      Last Name: <input type="text" name="last_name">
+                    </label>
+                    <label>
+                      Email: <input type="text" name="email">
+                    </label>
+                    <label>
+                      Password: <input type="password" name="password">
+                    </label>
+                    <label>
+                      Confirm Passwrod: <input type="password" name="con_password">
+                    </label>
+                    <input type="submit" name="submit" value="Register">
+                  </form>
+                </form>
+                <a href="/signin">Already have an account? Login</a>
+            </div>
+            <div class="messages">
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{message}}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+            </div>
+
+        </div>
+    </body>
+</html>

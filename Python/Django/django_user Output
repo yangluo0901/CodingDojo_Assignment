@@ -1,0 +1,270 @@
+Last login: Tue Dec 12 17:06:30 on ttys000
+yangluos-MBP:~ yangluo$ pwd
+/Users/yangluo
+yangluos-MBP:~ yangluo$ cd Desktop/DojoAssignments/Python/Django
+yangluos-MBP:Django yangluo$ cd django_intro/apps
+-bash: cd: django_intro/apps: No such file or directory
+yangluos-MBP:Django yangluo$ cd survey
+yangluos-MBP:survey yangluo$ cd apps
+yangluos-MBP:apps yangluo$ python ../manage.py startapp user_login
+yangluos-MBP:apps yangluo$ cd user_login
+yangluos-MBP:user_login yangluo$ touch urls.py
+yangluos-MBP:user_login yangluo$ pwd
+/Users/yangluo/Desktop/DojoAssignments/Python/Django/survey/apps/user_login
+yangluos-MBP:user_login yangluo$ python ../../manage.py makemigrations
+No changes detected
+yangluos-MBP:user_login yangluo$ cd ..
+yangluos-MBP:apps yangluo$ cd ..
+yangluos-MBP:survey yangluo$ ls
+apps		db.sqlite3	manage.py	survey
+yangluos-MBP:survey yangluo$ python manage.py makemigrations
+No changes detected
+yangluos-MBP:survey yangluo$ python migrates
+python: can't open file 'migrates': [Errno 2] No such file or directory
+yangluos-MBP:survey yangluo$ python migrate
+python: can't open file 'migrate': [Errno 2] No such file or directory
+yangluos-MBP:survey yangluo$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+yangluos-MBP:survey yangluo$ python manage.py shell
+Python 2.7.10 (default, Jul 15 2017, 17:16:57) 
+[GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.31)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> pwd
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'pwd' is not defined
+>>> from apps.user_login.models import *
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Users/yangluo/Desktop/DojoAssignments/Python/Django/survey/apps/user_login/models.py", line 7, in <module>
+    class User(moldels.Model):
+NameError: name 'moldels' is not defined
+>>> from apps.user_login.models import *
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Users/yangluo/Desktop/DojoAssignments/Python/Django/survey/apps/user_login/models.py", line 7, in <module>
+    class User(models.Model):
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 118, in __new__
+    "INSTALLED_APPS." % (module, name)
+RuntimeError: Model class apps.user_login.models.User doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.
+>>> 
+KeyboardInterrupt
+>>> 
+>>> exit()
+yangluos-MBP:survey yangluo$ python manage.py makemigrations
+No changes detected
+yangluos-MBP:survey yangluo$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+yangluos-MBP:survey yangluo$ pwd
+/Users/yangluo/Desktop/DojoAssignments/Python/Django/survey
+yangluos-MBP:survey yangluo$ python manage.py migrate
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 364, in execute_from_command_line
+    utility.execute()
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 338, in execute
+    django.setup()
+  File "/Library/Python/2.7/site-packages/django/__init__.py", line 27, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/Library/Python/2.7/site-packages/django/apps/registry.py", line 85, in populate
+    app_config = AppConfig.create(entry)
+  File "/Library/Python/2.7/site-packages/django/apps/config.py", line 120, in create
+    mod = import_module(mod_path)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named aaps
+yangluos-MBP:survey yangluo$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+  Your models have changes that are not yet reflected in a migration, and so won't be applied.
+  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+yangluos-MBP:survey yangluo$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+  Your models have changes that are not yet reflected in a migration, and so won't be applied.
+  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+yangluos-MBP:survey yangluo$ python manage.py makemigrations
+Migrations for 'user_login':
+  apps/user_login/migrations/0001_initial.py
+    - Create model User
+yangluos-MBP:survey yangluo$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions, user_login
+Running migrations:
+  Applying user_login.0001_initial... OK
+yangluos-MBP:survey yangluo$ python manage.py shell
+Python 2.7.10 (default, Jul 15 2017, 17:16:57) 
+[GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.31)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> Users.objects.create(first_name = 'Yang', last_name = 'Luo', email_address = 'yangluo0901@gmail.com', age = '26')
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Users' is not defined
+>>> User.objects.create(first_name = 'Yang', last_name = 'Luo', email_address = 'yangluo0901@gmail.com', age = '26')
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'User' is not defined
+>>> User.objects.create(first_name = 'Yang', last_name = 'Luo', email_address = 'yangluo0901@gmail.com', age = '26')
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'User' is not defined
+>>> from apps.user_login.models import *
+>>> User.objects.create(first_name = 'Yang', last_name = 'Luo', email_address = 'yangluo0901@gmail.com', age = '26')
+<User: User object>
+>>> User.objects.all()
+<QuerySet [<User: User object>]>
+>>> User.objects.all().value
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'value'
+>>> User.objects.all().value()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'value'
+>>> User.objects.all().Value()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'Value'
+>>> User.objects.all().Value
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'Value'
+>>> User.objects.all().values()
+<QuerySet [{'first_name': u'Yang', 'last_name': u'Luo', 'created_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536357, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536420, tzinfo=<UTC>), u'id': 1, 'email_address': u'yangluo0901@gmail.com', 'age': 26}]>
+>>> clear
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'clear' is not defined
+>>> clear history
+  File "<console>", line 1
+    clear history
+                ^
+SyntaxError: invalid syntax
+>>> exit()
+yangluos-MBP:survey yangluo$ clear
+
+yangluos-MBP:survey yangluo$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+yangluos-MBP:survey yangluo$ python manage.py shell
+Python 2.7.10 (default, Jul 15 2017, 17:16:57) 
+[GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.31)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.user_login.models import *
+>>> User.objects.create(first_name = 'Ran', last_name = 'Li', email_address = 'ranli@gmail.com', age = '30')
+<User: User object>
+>>> User.objects.all().values()
+<QuerySet [{'first_name': u'Yang', 'last_name': u'Luo', 'created_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536357, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536420, tzinfo=<UTC>), u'id': 1, 'email_address': u'yangluo0901@gmail.com', 'age': 26}, {'first_name': u'Ran', 'last_name': u'Li', 'created_at': datetime.datetime(2017, 12, 13, 4, 34, 17, 221720, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 34, 17, 221780, tzinfo=<UTC>), u'id': 2, 'email_address': u'ranli@gmail.com', 'age': 30}]>
+>>> User.objects.last()
+<User: User object>
+>>> User.objects.last().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'User' object has no attribute 'values'
+>>> a = User.objects.last()
+>>> a.values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'User' object has no attribute 'values'
+>>> User.objects.first()
+<User: User object>
+>>> User.objects.order_by(first_name DESC)
+  File "<console>", line 1
+    User.objects.order_by(first_name DESC)
+                                        ^
+SyntaxError: invalid syntax
+>>> User.objects.order_by('-first_name')
+<QuerySet [<User: User object>, <User: User object>]>
+>>> User.objects.order_by('first_name')
+<QuerySet [<User: User object>, <User: User object>]>
+>>> User.objects.all().values
+<bound method QuerySet.values of <QuerySet [<User: User object>, <User: User object>]>>
+>>> User.objects.all().values()
+<QuerySet [{'first_name': u'Yang', 'last_name': u'Luo', 'created_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536357, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536420, tzinfo=<UTC>), u'id': 1, 'email_address': u'yangluo0901@gmail.com', 'age': 26}, {'first_name': u'Ran', 'last_name': u'Li', 'created_at': datetime.datetime(2017, 12, 13, 4, 34, 17, 221720, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 34, 17, 221780, tzinfo=<UTC>), u'id': 2, 'email_address': u'ranli@gmail.com', 'age': 30}]>
+>>> User.objects.create(first_name = 'Michael', last_name = 'Jordan', email_address 
+  File "<console>", line 1
+    User.objects.create(first_name = 'Michael', last_name = 'Jordan', email_address = mjordan@gmail.com', age = '40')
+                                                                                             ^
+SyntaxError: invalid syntax
+>>> User.objects.create(first_name = 'Michael', last_name = 'Jordan', email_address = 'mjordan@gmail.com', age = '40')
+<User: User object>
+>>> User.objects.all().values()                                                 <QuerySet [{'first_name': u'Yang', 'last_name': u'Luo', 'created_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536357, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536420, tzinfo=<UTC>), u'id': 1, 'email_address': u'yangluo0901@gmail.com', 'age': 26}, {'first_name': u'Ran', 'last_name': u'Li', 'created_at': datetime.datetime(2017, 12, 13, 4, 34, 17, 221720, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 34, 17, 221780, tzinfo=<UTC>), u'id': 2, 'email_address': u'ranli@gmail.com', 'age': 30}, {'first_name': u'Michael', 'last_name': u'Jordan', 'created_at': datetime.datetime(2017, 12, 13, 4, 40, 47, 12476, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 40, 47, 12537, tzinfo=<UTC>), u'id': 3, 'email_address': u'mjordan@gmail.com', 'age': 40}]>
+>>> User.objects.order_by('id')
+<QuerySet [<User: User object>, <User: User object>, <User: User object>]>
+>>> User.objects.all().values()
+<QuerySet [{'first_name': u'Yang', 'last_name': u'Luo', 'created_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536357, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536420, tzinfo=<UTC>), u'id': 1, 'email_address': u'yangluo0901@gmail.com', 'age': 26}, {'first_name': u'Ran', 'last_name': u'Li', 'created_at': datetime.datetime(2017, 12, 13, 4, 34, 17, 221720, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 34, 17, 221780, tzinfo=<UTC>), u'id': 2, 'email_address': u'ranli@gmail.com', 'age': 30}, {'first_name': u'Michael', 'last_name': u'Jordan', 'created_at': datetime.datetime(2017, 12, 13, 4, 40, 47, 12476, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 40, 47, 12537, tzinfo=<UTC>), u'id': 3, 'email_address': u'mjordan@gmail.com', 'age': 40}]>
+>>> User.objects.order_by('-id')
+<QuerySet [<User: User object>, <User: User object>, <User: User object>]>
+>>> User.objects.all().values()
+<QuerySet [{'first_name': u'Yang', 'last_name': u'Luo', 'created_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536357, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536420, tzinfo=<UTC>), u'id': 1, 'email_address': u'yangluo0901@gmail.com', 'age': 26}, {'first_name': u'Ran', 'last_name': u'Li', 'created_at': datetime.datetime(2017, 12, 13, 4, 34, 17, 221720, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 34, 17, 221780, tzinfo=<UTC>), u'id': 2, 'email_address': u'ranli@gmail.com', 'age': 30}, {'first_name': u'Michael', 'last_name': u'Jordan', 'created_at': datetime.datetime(2017, 12, 13, 4, 40, 47, 12476, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 40, 47, 12537, tzinfo=<UTC>), u'id': 3, 'email_address': u'mjordan@gmail.com', 'age': 40}]>
+>>> >>> User.objeorder_by('age'))
+  File "<console>", line 1
+    User.objects.order_by('age'))
+                                ^
+SyntaxError: invalid syntax
+>>> User.objects.order_by('age')
+<QuerySet [<User: User object>, <User: User object>, <User: User object>]>
+>>> User.objects.all().values()
+<QuerySet [{'first_name': u'Yang', 'last_name': u'Luo', 'created_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536357, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536420, tzinfo=<UTC>), u'id': 1, 'email_address': u'yangluo0901@gmail.com', 'age': 26}, {'first_name': u'Ran', 'last_name': u'Li', 'created_at': datetime.datetime(2017, 12, 13, 4, 34, 17, 221720, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 34, 17, 221780, tzinfo=<UTC>), u'id': 2, 'email_address': u'ranli@gmail.com', 'age': 30}, {'first_name': u'Michael', 'last_name': u'Jordan', 'created_at': datetime.datetime(2017, 12, 13, 4, 40, 47, 12476, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 40, 47, 12537, tzinfo=<UTC>), u'id': 3, 'email_address': u'mjordan@gmail.com', 'age': 40}]>
+>>> User.objects.order_by('-age')
+<QuerySet [<User: User object>, <User: User object>, <User: User object>]>
+>>> User.objects.all().values()
+<QuerySet [{'first_name': u'Yang', 'last_name': u'Luo', 'created_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536357, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 29, 45, 536420, tzinfo=<UTC>), u'id': 1, 'email_address': u'yangluo0901@gmail.com', 'age': 26}, {'first_name': u'Ran', 'last_name': u'Li', 'created_at': datetime.datetime(2017, 12, 13, 4, 34, 17, 221720, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 34, 17, 221780, tzinfo=<UTC>), u'id': 2, 'email_address': u'ranli@gmail.com', 'age': 30}, {'first_name': u'Michael', 'last_name': u'Jordan', 'created_at': datetime.datetime(2017, 12, 13, 4, 40, 47, 12476, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 12, 13, 4, 40, 47, 12537, tzinfo=<UTC>), u'id': 3, 'email_address': u'mjordan@gmail.com', 'age': 40}]>
+>>> User.objects.get(id = 3).values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'User' object has no attribute 'values'
+>>> User.objects.get(id = 3)
+<User: User object>
+>>> b = User.objects.get(id = 3)
+>>> b.first_name
+u'Michael'
+>>> b.last_name = 'Jason'
+>>> b.last_name
+'Jason'
+>>> b.save()
+>>> User.objects.get(id = 3).delete()
+(1, {u'user_login.User': 1})
+>>> exit()
+yangluos-MBP:survey yangluo$ django_user.txt
+-bash: django_user.txt: command not found
+yangluos-MBP:survey yangluo$ textfile.txt
+-bash: textfile.txt: command not found
+yangluos-MBP:survey yangluo$ file.txt
+-bash: file.txt: command not found
+yangluos-MBP:survey yangluo$ 

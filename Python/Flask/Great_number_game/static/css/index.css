@@ -1,0 +1,57 @@
+*{
+    padding:0;
+    margin:0;
+}
+.wrapper{
+    width:970px;
+    margin:0 auto;
+
+}
+h1{
+    text-align: center;
+    margin: auto;
+}
+h3{
+    text-align: center;
+    margin: auto;
+}
+input{
+    display: block;
+    margin: auto;
+}
+.wrong{
+    width:300px;
+    height:150px;
+    padding-top: 55px;
+    background-color: red;
+    box-sizing: border-box;
+
+
+}
+
+.bingo{
+    margin: 20px auto;
+    width:300px;
+    height: 150px;
+    padding-top:10px;
+    background-color: green
+
+
+}
+.bingo h1{
+
+}
+.bingo a{
+
+
+}
+.bingo button{
+    height:22px;
+    width:70px;
+    box-shadow: 2px 2px black;
+    border-radius: 3px;
+    margin: 80px 120px;
+}
+form{
+    margin: 50px auto;
+}

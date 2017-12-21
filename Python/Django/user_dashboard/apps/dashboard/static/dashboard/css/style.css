@@ -1,0 +1,90 @@
+.wrapper{
+    width: 960px;
+    margin: auto;
+
+}
+h{
+    color:blue;
+}
+.upper{
+    border: 2px solid black;
+}
+.upper a{
+    margin-left: 98px;
+}
+.upper a:last-child{
+    float: right;
+    margin-right: 98px;
+}
+.middle{
+    width:760px;
+    height:200px;
+    margin:20px auto;
+    background-color: lightgrey;
+    padding:5px;
+}
+div [class*= "col"]{
+    height: 200px;
+    width:200px;
+    display: inline-block;
+    margin-left:98px;
+    margin-top:30px;
+    padding:5px;
+    box-sizing: border-box;
+    margin-right: -16px;
+}
+.col-2{
+    position:relative;
+    top:-18px;
+}
+.one{
+    background: #0080ff;
+    padding:5px;
+    box-shadow: 2px 2px black;
+    margin-left: 5px
+
+}
+input{
+    display: block;
+    margin-top: 5px;
+    height: 20px;
+
+}
+.main_form{
+    margin-left: 20px;
+}
+.function{
+    background-color: #00ff00;
+    border-radius: 4px;
+    padding:4px 10px;
+    box-shadow: 2px 2px black;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+table,td,th{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+th{
+    width:130px;
+}
+td{
+    text-align: center;
+}
+tbody tr:nth-child(2n-1){
+    background-color: lightgrey;
+}
+ul{
+    list-style-type: none;
+}
+
+.messages li{
+    width:450px;
+    border:1px solid black;
+    border-radius: 4px;
+    padding:4px 10px;
+    margin-top: 10px;
+}
+.messages textarea{
+    margin-top: 15px;
+}

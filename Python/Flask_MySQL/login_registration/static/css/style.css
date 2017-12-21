@@ -1,0 +1,13 @@
+th{
+    width:150px;
+}
+label{
+    display:block;
+    text-align: right;
+    width: 320px;
+}
+.registration, .login{
+    margin-left: 261px;
+    margin-top: 10px;
+
+}

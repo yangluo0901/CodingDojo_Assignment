@@ -56,6 +56,9 @@
                 $("#html").click(function(){
                     $("p").html("<b> Can also add tag by html </b> Overwrite text by html");
                 });
+                $("#text").click(function(){
+                    $("p").html(" both html&text overwrite");
+                });
                 $("#attr").click(function(){
                     var property = $("button").attr("type");
                     $("p").text(property);
@@ -78,6 +81,7 @@
         <button type="button" id="addclass">addClass</button>
         <button type="button" id="Edit">Edit</button>
         <button type="button" id="html">.html</button>
+        <button type="button" id="text">.text</button>
         <button type="button" id="attr">attr</button>
         <button type="button" id="data">data</button>
         <p>Paragraph used to text jQuery functions!</p>

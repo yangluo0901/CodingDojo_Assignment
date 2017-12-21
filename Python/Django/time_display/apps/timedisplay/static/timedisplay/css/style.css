@@ -1,0 +1,9 @@
+h3,h2{
+    text-align: center;
+    border:1px solid black;
+    width:400px;
+}
+div{
+    width:600px;
+    margin: auto;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Edit</title>
+    </head>
+    <body>
+
+        <form class="edit" action="/friends/{{value}}" method="post">
+            <label>
+                First Name : <input type="text" name="first_name">
+            </label>
+            <label>
+                Last Name : <input type="text" name="last_name">
+            </label>
+            <label>
+                E-mail : <input type="email" name="email">
+            </label>
+            <input type="submit" name="edit_friend" value="Sumbit">
+        </form>
+    </body>
+</html>

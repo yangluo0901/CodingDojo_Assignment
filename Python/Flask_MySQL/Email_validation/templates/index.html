@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Email Validation</title>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p> {{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form class="" action="/validation" method="post">
+            <label>
+                E-mail:<input type="text" name="email">
+            </label>
+            <input type="submit" name="submit" value="Sumbit">
+        </form>
+
+        <form class="" action="/delete" method="post">
+            <label>
+                E-mail:<input type="text" name="email">
+            </label>
+            <input type="submit" name="submit" value="Delete">
+        </form>
+        {% if show == True %}
+            <h1> All recorded e-mails </h1>
+            {% for element in all_emails %}
+                <p>{{element ['email']}}</p>
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>
