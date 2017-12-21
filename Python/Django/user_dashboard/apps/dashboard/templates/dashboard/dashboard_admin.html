@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>User Dashboard</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/style.css' %}">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+              $(document).ready(function(){
+                $(".delete").click(function(){
+                  if (confirm("Are you sure") == true){
+                    var url = "http://localhost:8000/user/destroy/" + $("input[name='url']").val()
+                    console.log(url)
+                    window.location = url
+                  } else{
+                        window.location = "http://localhost:8000/dashboard/admin"
+
+                    }
+                  });
+                });
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="upper">
+                <a href="#"><b>Test APP</b></a>
+                <a href="/dashboard/admin" class="current_at">Dashboard</a>
+                <a href="/user/edit">Profile</a>
+                <a href="/signin">Log off {{request.session.login_user}}</a>
+            </div>
+            <div class="dashboard">
+                <h2>All Users</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>E-mail</th>
+                            <th>Created At</th>
+                            <th>User Level</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                            <tr>
+                                <td>{{user.id}}</td>
+                                <td><a href="/user/show/{{user.id}}">{{user.first_name}} {{user.last_name}}</a></td>
+                                <td>{{user.email}}</td>
+                                <td>{{user.created_at}}</td>
+                                <td>{{user.level}}</td>
+                                <td>
+                                    <a href="/user/edit/{{user.id}}">Edit</a>
+                                    <input type="hidden" name="url" value="{{user.id}}">
+                                    <a href="#" class="delete">Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

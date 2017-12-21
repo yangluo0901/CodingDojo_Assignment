@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit profile</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/style.css' %}">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="upper">
+          <a href="#"><b>Test APP</b></a>
+          <a href="/dashboard/admin" class="current_at">Dashboard</a>
+          <a href="/user/edit">Profile</a>
+          <a href="/signin">Log off {{request.session.login_user}}</a>
+      </div>
+      <h2>Edit user #{{request.session.user_id}} {{request.session.login_user}}</h2>
+      <a href="/dashboard/admin"><button class="one">Return to Dashboard</button></a>
+      <fieldset>
+        <legend>Edit information</legend>
+        <form class="" action="user/edit/process" method="post">
+            {% csrf_token %}
+          <label>Email Addres:
+            <input type="text" name="email" placeholder="{{user.email}}">
+          </label>
+          <label>
+            First Name:
+            <input type="text" name="first_name" placeholder = "{{user.first_name}}">
+          </label>
+          <label>
+            Last Name: <input type="text" name="last_name" placeholder = "{{user.last_name}}">
+          </label>
+          <input type="hidden" name="target_id" value="{{user.id}}">
+          <!--pass user whose information will be changed to edit function in views.py  -->
+          <input type="submit" name="submit" value="Save">
+        </form>
+      </fieldset>
+      <fieldset>
+        <legend>Change Password</legend>
+        <form class="" action="/user/edit/process" method="post">
+          {% csrf_token %}
+          <label>Password
+            <input type="text" name="password">
+          </label>
+          <label>
+            Confirm password <input type="text" name="con_pw">
+          </label>
+          <input type="hidden" name="target_id" value="{{user.id}}">
+          <!--pass user whose information will be changed to edit function in views.py  -->
+          <input type="submit" name="submit" value="Update Password">
+        </form>
+      </fieldset>
+      <fieldset>
+        <legend>Edit Description</legend>
+        <textarea name="desc" rows="4" cols="80"></textarea>
+      </fieldset>
+    </div>
+  </body>
+</html>

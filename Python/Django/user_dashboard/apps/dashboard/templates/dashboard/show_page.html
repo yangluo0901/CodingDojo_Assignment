@@ -36,6 +36,7 @@
             <li>{{post.content}}</li>
               <ul>
                 {% for message in post.messages.all%}
+                  <a href="/user/show/{{post.user.id}}">{{messge.user.first_name}} {{message.user.last_name}}</a> wrote:
                   <li>{{message.content}}</li>
                 {% endfor %}
 
