@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Indivial Quotes</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'quotation/css/style1.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="upper">
+                <a href="/quotes">Dashboard</a>&#124;<a href="/main">Logout</a>
+            </div>
+            <h2>Posts by {{user.name}}</h2>
+            <h3>Count:{{quotes.count}}</h3>
+            <ul class='individual'>
+                {% for quote in quotes %}
+                    <li><span>{{quote.quoted_by}}:</span> {{quote.content}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </body>
+</html>

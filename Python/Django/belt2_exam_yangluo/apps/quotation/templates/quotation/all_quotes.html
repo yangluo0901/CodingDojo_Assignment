@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quotes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'quotation/css/style.css' %}">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="upper">
+        <h1>Welcome, {{user.name}}</h1>
+        <a href="/main">Logout</a>
+      </div>
+      <h2>Quotable Quotes:</h2>
+      <div class="left">
+        <ul>
+            {% for value in list %}
+              <li>
+                  {{value.quoted_by}}: {{value.content}}
+                  <i>Posted by <a href="/users/{{value.user.id}}"> {{value.user.name}}</a></i>
+                  <form class="" action="/add_favorite" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="quote_id" value="{{value.id}}">
+                    <input class = 'add_list' type="submit" name="submit" value="Add to my list">
+                  </form>
+              </li>
+            {% endfor %}
+        </ul>
+
+      </div>
+        <fieldset class="upper_right">
+          <legend><h2>Your Favorite</h2></legend>
+          <div class="">
+            <ul>
+              {% for quote in quotes %}
+                  {% for element in quote.favorites.all %}
+                      {% if  element.id ==  request.session.login_id %}
+                      <li>
+                        {{quote.quoted_by}}:{{quote.content}}
+                        <i>Posted by <a href="/users/{{quote.user.id}}"> {{quote.user.name}}</a></i>
+                        <form class="" action="/remove_favorite" method="post">
+                          {% csrf_token %}
+                          <input type="hidden" name="quote_id" value="{{quote.id}}">
+                          <input  class = 'remove_list' type="submit" name="submit" value="Remove from  my list">
+                        </form>
+                      </li>
+                      {%endif%}
+                  {%endfor%}
+              {% endfor %}
+            </ul>
+          </div>
+        </fieldset>
+      <div class="lower_right">
+        <h2>Contribute a Quote:</h2>
+        <form class="" action="/add_quote" method="post">
+          {% csrf_token %}
+          <label>
+            Quote By: <input type="text" name="quoted_by" placeholder="Name">
+          </label>
+          <label>
+            Message: <textarea name="quote" rows="4" cols="30">Place your quote here ... </textarea>
+          </label>
+          <input type="submit" name="submit" value="Submit">
+        </form>
+      </div>
+
+    </div>
+  </body>
+</html>

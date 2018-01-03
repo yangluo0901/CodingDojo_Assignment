@@ -1,0 +1,40 @@
+ul{
+    list-style-type: none;
+}
+span{
+    color: red;
+}
+.wrapper{
+  width:960px;
+  height: 760px;
+  /* background-color: red; */
+  margin:5px auto;
+  padding: 10px 50px;
+  box-sizing: border-box;
+}
+.col-1{
+  width: 350px;
+  display: inline-block;
+}
+.col-1 p{
+  font-size: 80%;
+  margin-left: 33px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.col-2{
+  display: inline-block;
+  position: relative;
+  top: -115px;
+  right:-135px;
+}
+label{
+  display: block;
+  width:306px;
+  text-align: right;
+  margin-bottom: 12px;
+}
+input[type='submit']{
+  float: right;
+  box-shadow: 2px 2px black;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login/Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'quotation/css/style1.css' %}">
+  </head>
+  <body>
+    <div class="wrapper">
+       <h1>Welcome !</h1>
+       <fieldset class="col-1">
+         <legend>Register</legend>
+         <form action="/registration" method = "post">
+           {% csrf_token %}
+           <label>
+             Name: <input type="text" name="name">
+           </label>
+           <label>
+             Email: <input type="text" name="email">
+           </label>
+           <label>
+             Password: <input type="password" name="password">
+           </label>
+           <p>&#8727; Password should be at least 8 characters!</p>
+           <label>
+             Confirm Passwrod: <input type="password" name="con_password">
+           </label>
+           <label>
+             Date of Birth: <input type="date" name="birthdate">
+           </label>
+           <input type="submit" name="submit" value="Register">
+         </form>
+       </fieldset>
+       <fieldset class='col-2'>
+         <legend>Login</legend>
+         <form class="" action="/login" method="post">
+           {% csrf_token %}
+           <label>
+             Email: <input type="text" name="email">
+           </label>
+           <label>
+             Password: <input type="password" name="password">
+           </label>
+           <input type="submit" name="submit" value="Login">
+         </form>
+       </fieldset>
+       <ul>
+         {% if messages %}
+           {% for message in messages %}
+             <li>{{message}}</li>
+            {% endfor %}
+          {% endif %}
+       </ul>
+
+    </div>
+  </body>
+</html>
