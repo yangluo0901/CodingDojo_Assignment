@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Add Reviews</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="upper">
+                <h3><strong>{{book.title}}</strong></h3>
+                <p>Author:book.author.name</p>
+                <a href="books">Home</a>
+                <a href="/home">logout</a>
+            </div>
+            <div class="left">
+                <h3><strong>Reviews:</strong></h3>
+                <ul>
+                    {% for review in reviews %}
+                        <li>
+                            <div class="stars">
+                                <p>Ratings: {{review.rate}}</p>
+                                <p>&#9734;</p>
+                                <p>&#9734;</p>
+                                <p>&#9734;</p>
+                                <p>&#9734;</p>
+                                <p>&#9734;</p>
+                            </div>
+                            <p><a href="users/{{review.user.id}}">{{review.user.name}}</a> says:  {{review.content}}</p>
+                            <p>Posted at {{review.created_at}}</p>
+                            {% if review.user.id == request.session.user_id %}
+                                <a href="/reviews/delete/{{review.id}}/{{book.id}}">Delete this Review</a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="right">
+                <h3><strong>Add a Review:</strong></h3>
+                <form class="" action="reviews/add" method="post">
+                    {% csrf_token %}
+                    <textarea name="review" rows="4" cols="80"></textarea>
+                    Ratings: <select class="" name="rate">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select> stars
+                    <input type="hidden" name="book_id" value="{{book.id}}">
+                    <input type="submit" name="submit" value="Submit Review">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,4 +1,3 @@
-import datetime
-import time
-print datetime.datetime.now()
-print time.strftime('%Y-%m-%d  %H:%M:%S %p')
+a = { "a":1, "b":2 , "c":3}
+for key,value in a.items():
+    print str(value)

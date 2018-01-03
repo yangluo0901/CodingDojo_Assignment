@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Books Home</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'logreg/css/style.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="upper">
+                <h2>Welcome, {{user.name}}</h2>
+                <a href="/books/add">Add book and reviews</a>
+                <a href="/home">logout</a>
+            </div>
+            <div class="left">
+                <h3><strong>Recent book reviews :</strong></h3>
+                <ul>
+                    {% for review in reviews %}
+
+                            <li>
+                                <a href="/books/{{review.book.id}}">{{review.book.title}}</a>
+                                <div class="stars">
+                                    <p>Ratings: {{review.rate}}</p>
+                                    <p>&#9734;</p>
+                                    <p>&#9734;</p>
+                                    <p>&#9734;</p>
+                                    <p>&#9734;</p>
+                                    <p>&#9734;</p>
+                                </div>
+                                <p><a href="users/{{review.user.id}}">{{review.user.name}}</a> says:{{review.content}}</p>
+                                <p>Posted at{{review.created_at}}</p>
+                            </li>
+
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="right">
+                <h3><strong>Other Books with Reviews :</strong></h3>
+                {% for book in books %}
+                    {% if book.reviews != "" %}
+                        <p><a href="/books/{{book.id}}">{{book.title}}</a></p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+    </body>
+</html>
