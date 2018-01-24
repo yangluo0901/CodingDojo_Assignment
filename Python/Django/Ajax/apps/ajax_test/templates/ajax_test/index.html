@@ -3,16 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>Ajax test</title>
-        this.uploader = new FileUploader(
-        {
-          url: this.URL,
-          headers: <Headers[]> [
-            {
-              name: 'X-CSRFTOKEN', value: this.csrftoken
-            },
-          ]
-        });
-
         <script src="https://code.jquery.com/jquery-3.2.1.js"
           integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
           crossorigin="anonymous">
@@ -29,16 +19,21 @@
                      e.preventDefault();
                     });
                  $("input[name='name']").keyup(function(){
-                     console.log('Submitting the following data')
+
                      $.ajax({
                          url:'/find',
                          method: 'post',
-                         data:$(this).parent().serialize(),
+                         data:{
+                             name: $(this).val(),
+                             csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+                         },
                          success:function(response){
-                             $("textarea[name='display']").html(response)
+                             $("textarea[name='display']").append("<p>"+response.name+"</p>")
+                             console.log(response)
                          }
 
-                     })
+                     });
+
                  });
               });
 
