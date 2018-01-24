@@ -23,13 +23,17 @@
                      $.ajax({
                          url:'/find',
                          method: 'post',
+                         dataType: 'json',
                          data:{
                              name: $(this).val(),
                              csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
                          },
                          success:function(response){
-                             $("textarea[name='display']").append("<p>"+response.name+"</p>")
+                             $("textarea[name='display']").html("<p>"+response.name+"</p>")
                              console.log(response)
+                         },
+                         error: function(){
+                             alert("Error")
                          }
 
                      });
