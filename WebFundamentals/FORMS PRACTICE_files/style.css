@@ -1,0 +1,16 @@
+.main {
+    outline: 5px red outset;
+    background-color: rgb(238, 217, 238)
+}
+.blue {
+    background-color: rgba(0, 255, 255, 0.726)
+}
+.border{
+    border : 1px brown dotted
+}
+#bg {
+    background-color:rgba(80, 156, 131, 0.575) 
+}
+.mtop{
+    margin-top:60px
+}

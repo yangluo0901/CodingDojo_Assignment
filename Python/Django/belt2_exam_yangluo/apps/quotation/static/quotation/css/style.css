@@ -57,8 +57,7 @@ h1{
 .left h2{
     margin-bottom: 0;
 }
-ul{
-
+.left ul, .upper_right ul{
     list-style-type: none;
 }
 .left ul{
@@ -68,8 +67,8 @@ ul{
     padding: 8px 15px;
 
 }
-li{
-  position: relative;
+.left li, .upper_right li{
+    position: relative;
     text-align: center;
     width:195px;
     height:110px;

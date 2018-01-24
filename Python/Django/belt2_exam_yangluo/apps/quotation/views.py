@@ -51,8 +51,10 @@ def login(request):
 def add_quote(request):
     result = Quote.objects.basic_validator(request.POST)
     if result[0] == False:
+        print " i am here"
         for key,value in result[1].iteritems():
-            message.errors(request, value)
+            print value
+            messages.error(request, value)
         return redirect('/quotes')
     else:
         Quote.objects.create(user = User.objects.get(id = request.session['login_id']), content = result[1],quoted_by = request.POST['quoted_by'])
